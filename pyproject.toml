@@ -1,0 +1,26 @@
+[project]
+name = "distributed-task-queue"
+version = "0.1.0"
+description = "distributed task queue with scheduler"
+readme = "README.md"
+authors = [
+    { name = "Eric Ge", email = "eric.ge96@gmail.com" }
+]
+requires-python = ">=3.14"
+dependencies = [
+    "redis>=7.1.0",
+]
+
+[project.scripts]
+distributed-task-queue = "distributed_task_queue:main"
+
+[build-system]
+requires = ["uv_build>=0.8.3,<0.9.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "pytest>=9.0.2",
+    "ruff>=0.14.14",
+    "ty>=0.0.14",
+]
