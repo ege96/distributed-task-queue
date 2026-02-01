@@ -36,7 +36,6 @@ class TaskRecord:
             attempt=0,
             max_attempts=max_attempts,
             timeout_s=timeout_s,
-            enqueued_at_ms=enqueued_at_ms,
             updated_at_ms=None,
             owner_worker_id=None,
             lease_expires_at_ms=None,
