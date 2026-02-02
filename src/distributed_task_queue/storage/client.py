@@ -1,13 +1,14 @@
 import redis
-import os
+from distributed_task_queue.config.settings import load_settings
 
 
 
 def redis_client():
+    settings = load_settings()
 
-    host = os.getenv('REDIS_HOST', 'localhost')
-    port = int(os.getenv('REDIS_PORT', 6379))
-    db = int(os.getenv('REDIS_DB', 0))
+    host = settings.redis_host
+    port = settings.redis_port
+    db = settings.redis_db
     
     client = redis.Redis(host=host, port=port, db=db)
     return client
